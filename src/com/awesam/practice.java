@@ -100,7 +100,7 @@ public class practice {
       if (randomgenrator==100) System.out.println("class to implement a queue");
       if (randomgenrator==100) System.out.println("function to calculate area of a circle and a rectangle using method overloading");
 
-        if(randomgenrator>0&&randomgenrator<10||randomgenrator==37) System.out.println("Function to perform iterative postOrder of a binary tree");
+        if(randomgenrator>0&&randomgenrator<10||randomgenrator==37) System.out.println("Function: postOrder iterative binary tree traversal(37)!");
 
     }/*
    public ListNode insertSort(int key){
