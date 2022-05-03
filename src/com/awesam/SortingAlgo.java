@@ -3,6 +3,17 @@ package com.awesam;
 import java.util.Arrays;
 
 public class SortingAlgo {
+    static int  binarySearch(int[]arr,int key){
+        int start= 0;
+        int end =arr.length-1;
+        while (start<end){
+            int mid=(start+end)/2;
+            if (arr[mid]==key)return mid;
+            if (arr[key]>mid)end-=1;
+            else start+=1;
+        }
+        return -1;
+    }
     static void selectionsort(int [] arr){
         for (int i = 0; i < arr.length-1; i++) {
             int min = i;
@@ -57,6 +68,6 @@ public class SortingAlgo {
         System.out.print("After merging");
         System.out.println(Arrays.toString(mergeSort(arr1,arr2,n,m)));
 
-
+        System.out.println(binarySearch(arr1,4));
     }
 }

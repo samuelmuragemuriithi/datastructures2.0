@@ -57,9 +57,27 @@ public class CircularLinkedList2 {
         System.out.println(first.data);
     }
 
+    public void insertEnd (int val){
+        ListNode temp = new ListNode(val);
+        if  (tail==null){
+            tail=temp;
+            temp.next=tail.next;
+
+        }
+        else{
+            temp.next=tail.next;
+            tail.next=temp;
+            tail=temp;
+        }
+        length++;
+
+    }
     public static void main(String[] args) {
         CircularLinkedList2 cll2= new CircularLinkedList2();
         cll2.createCLinkedList();
         cll2.print();
+        cll2.insertEnd(9);
+        cll2.print();
+
     }
 }
