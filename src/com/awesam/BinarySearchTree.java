@@ -37,6 +37,20 @@ public class BinarySearchTree {
         root= insert(root,value);
     }
 
+    public boolean isValid(long min, long max){
+        return isValid( root,min,max);
+    }
+    public  boolean isValid(TreeNode root,long min,long max){
+        if (root==null)return true;
+        if (root.data<=min||root.data>=max)return false;
+        boolean left = isValid(root.left,min,root.data);
+        if (left){
+            return  isValid(root.right, root.data,max);
+        }
+        return false;
+    }
+
+
 
     public static void main(String[] args) {
         BinarySearchTree binarySearchTree= new BinarySearchTree();
@@ -47,6 +61,19 @@ public class BinarySearchTree {
         binarySearchTree.insert(16);
         binarySearchTree.inOrder(binarySearchTree.root);
         binarySearchTree.search(binarySearchTree.root, 2);
+        BinarySearchTree binarySearchTree2=new BinarySearchTree();
+        binarySearchTree2.insert(5);
+        binarySearchTree2.insert(2);
+        binarySearchTree2.insert(9);
+        binarySearchTree2.insert(6);
+        binarySearchTree2.insert(4);
+        System.out.println();
+        long min =Long.MIN_VALUE;
+        long max = Long.MAX_VALUE;
+        String result1= (binarySearchTree.isValid(min,max))
+                ?"binary tree validated!"
+                :"binary tree is not validated!";
+        System.out.println(result1);
     }
 
 }

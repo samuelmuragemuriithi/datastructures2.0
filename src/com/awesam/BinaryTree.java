@@ -113,6 +113,19 @@ public class BinaryTree {
         preOrder(root.right);
 
     }
+    public void preOrder2(TreeNode root){
+        if (root==null)return;
+        Stack<TreeNode>stack=new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            TreeNode temp=stack.pop();
+            System.out.print(temp.data+", ");
+            if (temp.right!=null)stack.push(temp.right);
+            if (temp.left!=null)stack.push(temp.left);
+
+
+        }
+    }
     public void postOrder(TreeNode root){
         if(root==null)return;
         postOrder(root.left);
@@ -133,8 +146,8 @@ public class BinaryTree {
         binaryTree.createBinaryTree();
         binaryTree.iterativePostOrder();
         System.out.println();
-        binaryTree.preOrder(binaryTree.root);
-        System.out.println();
+        binaryTree.preOrder2(binaryTree.root);
+        System.out.println("m");
         binaryTree.inOrder2();
         System.out.println();
         System.out.println(binaryTree.max(binaryTree.root));
